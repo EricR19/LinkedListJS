@@ -28,19 +28,20 @@ class doubleLinkedList {
         }
         //Pop Remove the last value of the List
     Pop() {
-        if (!this.head) undefined;
-        let temp = this.tail;
-        if (this.length === 1) {
-            this.head = null;
-            this.tail = null;
-        } else {
-            this.tail = this.tail.prev;
-            this.tail.next = null;
-            this.prev = null;
+            if (!this.head) undefined;
+            let temp = this.tail;
+            if (this.length === 1) {
+                this.head = null;
+                this.tail = null;
+            } else {
+                this.tail = this.tail.prev;
+                this.tail.next = null;
+                this.prev = null;
+            }
+            this.length--;
+            return temp;
         }
-        this.length--;
-        return temp;
-    }
+        //Add a value at the beginning of the list
     Unshift(value) {
         const newNode = new Node(value);
         if (!this.head) {
